@@ -31,7 +31,7 @@ def search(request):
 
     blogs = []
     if keyword:
-        blogs = Blog.objects.filter(Q(title__icontains=keyword)| Q(short_description__icontains=keyword) | Q(blog_body__icontains=keyword),  status=1)
+        blogs = Blog.objects.filter(Q(title__icontains=keyword)| Q(short_description__icontains=keyword),  status=1)
     context = {
         'blogs': blogs,
         'keyword': keyword,
